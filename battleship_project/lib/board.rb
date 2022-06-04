@@ -13,15 +13,15 @@ class Board
     end
 
     def [](pair) #[4,5] is a position [row = 4, col = 5] #get spot
-        #x,y = pair = [4,5]
-        x,y = pair[0], pair[1]
-        @grid[x][y] # this needs to be @grid, cannot be Self or else stuck in loop
+        #y,x = pair = [4,5]
+        y,x = pair[0], pair[1]
+        @grid[y][x] # this needs to be @grid, cannot be Self or else stuck in loop
     end
 
     def []=(pair,val) #[4,5] & value # modify spot to value
         #row, col = pos
-        x, y = pair[0], pair[1]
-        @grid[x][y] = val # this needs to be @grid, cannot be Self or else stuck in loop
+        y, x = pair[0], pair[1]
+        @grid[y][x] = val # this needs to be @grid, cannot be Self or else stuck in loop
     end
 
     def num_ships
