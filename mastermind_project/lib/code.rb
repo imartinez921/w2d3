@@ -18,7 +18,7 @@ class Code
   end
 
   def Code.random(num) #Array.new(length, default element)    #rand(range)
-    Code.new( Array.new(num) {POSSIBLE_PEGS.keys[rand(0..3)]} )
+    Code.new( Array.new(num) {POSSIBLE_PEGS.keys[rand(0..3)]} )        #remember random has no . but takes a range OF INDEXES most often
     # second arg = default elements will be random pegs})
   end
 
@@ -57,6 +57,15 @@ class Code
       end
     end
     return count
+  end
+
+  def ==(code)
+    (0...code.length).each do |i|
+      if code[i] != self[i]
+        return false
+      end
+    end
+    return true
   end
 
 
